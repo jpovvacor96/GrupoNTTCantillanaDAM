@@ -8,6 +8,7 @@ public class Varios11 {
 	
 	public static void comp(String archivo1, String archivo2) {
 		try {
+			int menorLinea;
 			BufferedReader in1=new BufferedReader(new FileReader(archivo1));
 			BufferedReader in2=new BufferedReader(new FileReader(archivo2));
 			String linea1=in1.readLine();
@@ -42,7 +43,13 @@ public class Varios11 {
 				linea2=in4.readLine();
 				for (int j=0;j<limiteArchivo;j++) {
 					if (!linea1.equals(linea2)) {
-						for (int i=0;i<=linea1.length()-1 && iguales;i++) {
+						if(linea1.length()<linea2.length()) {
+							menorLinea=linea1.length();
+						}
+						else {
+							menorLinea=linea2.length();
+						}
+						for (int i=0;i<=menorLinea-1 && iguales;i++) {
 							if (linea1.charAt(i)!=linea2.charAt(i)) {
 								errorCaracter=i;
 								iguales=false;
@@ -72,7 +79,13 @@ public class Varios11 {
 				linea2=in4.readLine();
 				for (int j=0;j<cuentaLinea1;j++) {
 					if (!linea1.equals(linea2)) {
-						for (int i=0;i<=linea1.length()-1 && iguales;i++) {
+						if(linea1.length()<linea2.length()) {
+							menorLinea=linea1.length();
+						}
+						else {
+							menorLinea=linea2.length();
+						}
+						for (int i=0;i<=menorLinea-1 && iguales;i++) {
 							if (linea1.charAt(i)!=linea2.charAt(i)) {
 								errorCaracter=i;
 								iguales=false;
