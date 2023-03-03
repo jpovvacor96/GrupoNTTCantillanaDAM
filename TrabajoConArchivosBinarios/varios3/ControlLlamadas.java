@@ -18,7 +18,11 @@ import java.util.Scanner;
  *
  */
 public class ControlLlamadas {
-	private static final String FILENAME = "llamadas.bin";
+	
+	
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos/DAM/Programación"
+			+ "/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosBinarios/ficheros/texto.bin";
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -26,7 +30,7 @@ public class ControlLlamadas {
 		boolean running = true;
 
 		// Cargar datos desde el archivo
-		try (DataInputStream input = new DataInputStream(new FileInputStream(FILENAME))) {
+		try (DataInputStream input = new DataInputStream(new FileInputStream(RUTA_ARCHIVO))) {
 			while (input.available() > 0) {
 				LocalDate fecha = LocalDate.parse(input.readUTF());
 				int llamadas = input.readInt();
@@ -78,7 +82,7 @@ public class ControlLlamadas {
 		}
 
 		// Guardar datos en el archivo
-		try (DataOutputStream output = new DataOutputStream(new FileOutputStream(FILENAME))) {
+		try (DataOutputStream output = new DataOutputStream(new FileOutputStream(RUTA_ARCHIVO))) {
 			for (RegistroLlamadas registro : registros) {
 				output.writeUTF(registro.getFecha().toString());
 				output.writeInt(registro.getLlamadas());

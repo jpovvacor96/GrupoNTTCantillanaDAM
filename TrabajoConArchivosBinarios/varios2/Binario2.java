@@ -10,11 +10,15 @@ import java.io.*;
  *
  */
 public class Binario2 {
+	
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos/DAM/Programación"
+			+ "/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosBinarios/ficheros/texto.bin";
 
     public static void main(String[] args) {
         try {
             /*crear un archivo binario para la escritura*/
-            FileOutputStream archSalida = new FileOutputStream("texto.bin");
+            FileOutputStream archSalida = new FileOutputStream(RUTA_ARCHIVO);
             DataOutputStream datos = new DataOutputStream(archSalida);
             
             /*Escritura del archivo y lectura linea a linea*/
@@ -32,7 +36,7 @@ public class Binario2 {
             archSalida.close();
             
             /* lectura del archivo .bin y muestra del mismo en pantalla*/
-            FileInputStream archEntrada = new FileInputStream("texto.bin");
+            FileInputStream archEntrada = new FileInputStream(RUTA_ARCHIVO);
             DataInputStream datos2 = new DataInputStream(archEntrada);
             while (datos2.available() > 0) {
                 String lineaLeida = datos2.readUTF();

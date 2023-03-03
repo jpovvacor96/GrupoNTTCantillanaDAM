@@ -28,9 +28,9 @@ public class Cliente implements Serializable{
 	private String nombre;
 	private int telefono;
 	public static List<Cliente> listaClientes=new ArrayList<>();
-	public static final String RUTA_ARCHIVO="/media/jose/Archivos/DAM/"
-			+ "Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM"
-			+ "/TrabajoConArchivosBinarios/varios4/clientes.bin";
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos/DAM/Programación"
+			+ "/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosBinarios/ficheros/clientes.bin";
 	
 	
 	//#########################

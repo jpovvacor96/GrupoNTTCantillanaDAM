@@ -10,9 +10,15 @@ import java.io.*;
  *
  */
 public class Binario1 {
+	
+	
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos/DAM/Programación"
+			+ "/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosBinarios/ficheros/datos.bin";
+	
     public static void main(String[] args) {
         try {
-            FileInputStream fichero = new FileInputStream("datos.bin");
+            FileInputStream fichero = new FileInputStream(RUTA_ARCHIVO);
             DataInputStream lector = new DataInputStream(fichero);
             while (lector.available() > 0) {
                 double d = lector.readDouble();
