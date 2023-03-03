@@ -14,10 +14,23 @@ import java.util.*;
  */
 public class Varios7 {
 	
+	public static final String RUTA_ARCHIVO_1="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/perso1.txt";
+	
+	public static final String RUTA_ARCHIVO_2="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/perso2.txt";
+	
+	public static final String RUTA_ARCHIVO_3="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/todos.txt";
+	
+	
     public static void main(String[] args) throws IOException {
         // Leer el contenido de los dos archivos en dos ArrayLists diferentes
-        List<String> perso1 = readFileToList("perso1.txt");
-        List<String> perso2 = readFileToList("perso2.txt");
+        List<String> perso1 = readFileToList(RUTA_ARCHIVO_1);
+        List<String> perso2 = readFileToList(RUTA_ARCHIVO_2);
 
         // Unir los dos ArrayLists en uno solo
         List<String> todos = new ArrayList<>();
@@ -28,7 +41,7 @@ public class Varios7 {
         Collections.sort(todos);
 
         // Escribir los nombres ordenados en el archivo todos.txt
-        writeListToFile("todos.txt", todos);
+        writeListToFile(RUTA_ARCHIVO_3, todos);
     }
 
     // Método para leer el contenido de un archivo en un ArrayList de Strings

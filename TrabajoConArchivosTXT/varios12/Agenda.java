@@ -9,6 +9,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Agenda {
+	
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/agenda.txt";
+	
 	private static List<Persona> contactos = new ArrayList<Persona>();
 	private static List<Persona> nuevosContactos = new ArrayList<Persona>();
 
@@ -26,7 +31,7 @@ public class Agenda {
 	}
 
 	public static boolean comprobarDatos() {
-		File archivo = new File("agenda.txt");
+		File archivo = new File(RUTA_ARCHIVO);
 		if (archivo.exists()) {
 			try (Scanner scanner = new Scanner(archivo)) {
 				while (scanner.hasNextLine()) {
@@ -86,7 +91,7 @@ public class Agenda {
 
 			break;
 		case 4:
-			try (BufferedWriter writer = new BufferedWriter(new FileWriter("agenda.txt", hayDatos))) {
+			try (BufferedWriter writer = new BufferedWriter(new FileWriter(RUTA_ARCHIVO, hayDatos))) {
 
 				for (Persona p : nuevosContactos) {
 					writer.write(p.toString() + "\n");

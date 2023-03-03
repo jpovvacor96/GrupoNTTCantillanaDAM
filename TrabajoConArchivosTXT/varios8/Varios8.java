@@ -20,6 +20,18 @@ import java.io.File;
  */
 public class Varios8 {
 	
+	public static final String RUTA_CIFRADO="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/cifrado.txt";
+	
+	public static final String RUTA_CODEC="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/codec.txt";
+	
+	public static final String RUTA_MENSAJE="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/mensaje.txt";
+	
 	/**
 	 * Lee el mensaje que queremos codificar de un archivo de texto determinado
 	 * @param url Ruta al archivo donde se encuentra el mensaje que queremos codificar
@@ -116,12 +128,9 @@ public class Varios8 {
 	 */
 	public static void main(String[] args) {
 		try {
-			List<String> mensaje=Varios8.leeMensaje("/media/Archivos/DAM/Programación"
-					+ "/eclipse-workspace-1dam/TrabajoConArchivosTXT/src/varios8/mensaje.txt");
-			List<String> mensajeCodificado=Varios8.codificaMensaje(mensaje, "/media/Archivos/DAM/Programación"
-					+ "/eclipse-workspace-1dam/TrabajoConArchivosTXT/src/varios8/codec.txt");
-			Varios8.escribeMensajeCodificado("/media/Archivos/DAM/Programación"
-					+ "/eclipse-workspace-1dam/TrabajoConArchivosTXT/src/varios8/cifrado.txt", mensajeCodificado);
+			List<String> mensaje=Varios8.leeMensaje(RUTA_MENSAJE);
+			List<String> mensajeCodificado=Varios8.codificaMensaje(mensaje, RUTA_CODEC);
+			Varios8.escribeMensajeCodificado(RUTA_CIFRADO, mensajeCodificado);
 		}
 		catch(IOException e) {
 			System.out.println(e);

@@ -8,19 +8,25 @@ import java.util.Scanner;
 
 public class Varios6 {
 	
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/texto.txt";
+	
 	public static void mostrar24() throws IOException{
 		Scanner teclado = new Scanner(System.in);
 		String texto = "";
-		BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\antoniocaro\\Downloads\\texto.txt"));
+		BufferedReader in = new BufferedReader(new FileReader(RUTA_ARCHIVO));
 		while (in.readLine() != null) {
 			for(int i = 0 ; i < 24; i++ ) {
 				texto = in.readLine();
-				System.out.println(texto);
+				if(texto!=null) {
+					System.out.println(texto);
+				}
 			}
 			teclado.nextLine();	
 		}
+		System.out.println("Final del documento");
 		teclado.close();
-		
 	}
 
 	public static void main(String[] args) {

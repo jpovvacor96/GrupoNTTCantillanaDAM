@@ -20,6 +20,18 @@ import java.util.List;
  */
 public class Varios9 {
 	
+	public static final String RUTA_CIFRADO_2="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/cifrado2.txt";
+	
+	public static final String RUTA_CODEC_2="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/codec2.txt";
+	
+	public static final String RUTA_MENSAJE_2="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/mensaje2.txt";
+	
 	/**
 	 * Lee el archivo de texto que contiene el mensaje cifrado y devuelve su contenido en
 	 * forma de lista
@@ -116,12 +128,9 @@ public class Varios9 {
 	 */
 	public static void main(String[] args) {
 		try {
-			List<String> mensaje=Varios9.leeMensajeCifrado("/media/Archivos/DAM/Programación/eclipse-"
-					+ "workspace-1dam/TrabajoConArchivosTXT/src/varios9/cifrado.txt");
-			List<String> mensajeCodificado=Varios9.decodificaMensaje(mensaje, "/media/Archivos/DAM/Programación"
-					+ "/eclipse-workspace-1dam/TrabajoConArchivosTXT/src/varios9/codec.txt");
-			Varios9.escribeMensajeDecodificado("/media/Archivos/DAM/Programación"
-					+ "/eclipse-workspace-1dam/TrabajoConArchivosTXT/src/varios9/mensaje.txt", mensajeCodificado);
+			List<String> mensaje=Varios9.leeMensajeCifrado(RUTA_CIFRADO_2);
+			List<String> mensajeCodificado=Varios9.decodificaMensaje(mensaje, RUTA_CODEC_2);
+			Varios9.escribeMensajeDecodificado(RUTA_MENSAJE_2, mensajeCodificado);
 		}
 		catch(IOException e) {
 			System.out.println(e);

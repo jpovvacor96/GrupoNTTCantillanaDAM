@@ -16,7 +16,9 @@ public class Varios10 {
     public static void main(String[] args) {
     	
     	//Nueva matriz
-        File miMatriz  = new File("matriz.txt");
+        File miMatriz  = new File("/media/jose/Archivos/DAM/Programación"
+        		+ "/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/"
+        		+ "GrupoNTTCantillanaDAM/TrabajoConArchivosTXT/varios10/matriz.txt");
 
         Scanner scn;
         try {

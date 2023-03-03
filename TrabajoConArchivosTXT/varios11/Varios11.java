@@ -6,6 +6,14 @@ import java.io.IOException;
 
 public class Varios11 {
 	
+	public static final String RUTA_ARCHIVO_1="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/texto1.txt";
+	
+	public static final String RUTA_ARCHIVO_2="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/texto2.txt";
+	
 	public static void comp(String archivo1, String archivo2) {
 		try {
 			int menorLinea;
@@ -115,10 +123,7 @@ public class Varios11 {
 	}
 	
 	public static void main(String[] args) {
-		Varios11.comp("/media/Archivos/DAM/Programación/eclipse-workspace-1dam/"
-				+ "TrabajoConArchivosTXTPropio/src/varios11/texto1.txt", "/media/"
-				+ "Archivos/DAM/Programación/eclipse-workspace-1dam/"
-				+ "TrabajoConArchivosTXTPropio/src/varios11/texto2.txt");
+		Varios11.comp(RUTA_ARCHIVO_1, RUTA_ARCHIVO_2);
 	}
 
 }

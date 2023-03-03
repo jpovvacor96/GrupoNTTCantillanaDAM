@@ -19,6 +19,10 @@ import java.util.Scanner;
  */
 public class Varios5 {
 	
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/firmas.txt";
+	
 	public static void firma(String nombre) throws IOException{
 		if (Varios5.estaEseNombre(nombre)) {
 			System.err.println("Esta persona ya ha firmado");	
@@ -27,9 +31,7 @@ public class Varios5 {
 			System.err.println("Debe introducir un nombre válido");
 		}
 		else {
-			BufferedWriter out=new BufferedWriter(new FileWriter("/media/Archivos/DAM/"
-			+ "Programación/eclipse-workspace-1dam/TrabajoConArchivosTXT/src/varios5/firmas.txt",
-			true));
+			BufferedWriter out=new BufferedWriter(new FileWriter(RUTA_ARCHIVO, true));
 			out.write(nombre);
 			out.newLine();
 			System.out.println("Firma registrada correctamente");
@@ -38,8 +40,7 @@ public class Varios5 {
 	}
 	
 	public static boolean estaEseNombre(String nombre) throws IOException{
-		BufferedReader in=new BufferedReader(new FileReader("/media/Archivos/DAM/"
-			+ "Programación/eclipse-workspace-1dam/TrabajoConArchivosTXT/src/varios5/firmas.txt"));
+		BufferedReader in=new BufferedReader(new FileReader(RUTA_ARCHIVO));
 		boolean encontrado;
 		encontrado=false;
 		String linea;
@@ -56,8 +57,7 @@ public class Varios5 {
 	}
 	
 	public static void muestraFirmas() throws IOException{
-		BufferedReader in=new BufferedReader(new FileReader("/media/Archivos/DAM/"
-			+ "Programación/eclipse-workspace-1dam/TrabajoConArchivosTXT/src/varios5/firmas.txt"));
+		BufferedReader in=new BufferedReader(new FileReader(RUTA_ARCHIVO));
 		String linea;
 		linea=in.readLine();
 		while(linea!=null) {
