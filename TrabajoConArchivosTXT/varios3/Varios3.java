@@ -14,13 +14,16 @@ import java.io.IOException;
  *
  */
 public class Varios3 {
+	
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/carta.txt";
+	
     public static void main(String[] args) {
-        String filename = "C:\\Users\\adrii\\eclipse-workspace\\varios\\carta.txt";
         int numChars = 0;
         int numWords = 0;
         int numLines = 0;
-
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVO))) {
             String line;
             while ((line = br.readLine()) != null) {
                 numChars += line.length();

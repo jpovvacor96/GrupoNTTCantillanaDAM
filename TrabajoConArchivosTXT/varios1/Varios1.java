@@ -16,20 +16,22 @@ import java.util.Scanner;
  *
  */
 public class Varios1 {
+	
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/";
 
 	public static void main(String[] args) {
 		try (Scanner teclado = new Scanner(System.in)) {
 			System.out.print("Introduce el nombre del archivo: ");
 			String nFichero = teclado.nextLine();
-
 			if (nFichero.isEmpty()) {
 				nFichero = "prueba.txt";
 			}
 
 			try {
-				FileReader fichero = new FileReader(nFichero);
+				FileReader fichero = new FileReader(RUTA_ARCHIVO+nFichero);
 				BufferedReader lector = new BufferedReader(fichero);
-
 				String linea = lector.readLine();
 				while (linea != null) {
 					System.out.println(linea);

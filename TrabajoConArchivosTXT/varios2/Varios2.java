@@ -15,27 +15,26 @@ import java.util.Scanner;
  *
  */
 public class Varios2 {
+	
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/";
 
 	public static void main(String[] args) {
 		try (Scanner teclado = new Scanner(System.in)) {
 			System.out.print("Ingrese su nombre: ");
 			String nombre = teclado.nextLine();
-
 			System.out.print("Ingrese su edad: ");
 			int edad = teclado.nextInt();
-
-			File datos = new File("datos.txt");
-
+			File datos = new File(RUTA_ARCHIVO+"datos.txt");
 			if (datos.exists()) {
 				datos.delete();
 			}
-
 			try {
 				datos.createNewFile();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-
 			try {
 				FileWriter creador = new FileWriter(datos);
 				creador.write(nombre + "\n");
@@ -45,7 +44,5 @@ public class Varios2 {
 				e.printStackTrace();
 			}
 		}
-
 	}
-
 }

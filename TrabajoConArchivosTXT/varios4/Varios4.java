@@ -13,9 +13,13 @@ import java.util.Scanner;
  *
  */
 public class Varios4 {
+	
+	public static final String RUTA_ARCHIVO="/media/jose/Archivos"
+			+ "/DAM/Programación/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
+			+ "/TrabajoConArchivosTXT/ficheros/numeros.txt";
+	
 	public static void main(String[] args) {
-        String filename = "C:\\Users\\adrii\\eclipse-workspace\\varios\\numeros.txt";
-        File numeros = new File(filename);
+        File numeros = new File(RUTA_ARCHIVO);
         double mayor;
         double menor;
         try(Scanner scanner = new Scanner(numeros)){
