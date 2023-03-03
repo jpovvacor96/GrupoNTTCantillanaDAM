@@ -15,37 +15,37 @@ public class Binario2 {
 			+ "/eclipse-workspace-1dam/GrupoNTTCantillanaDAM/GrupoNTTCantillanaDAM"
 			+ "/TrabajoConArchivosBinarios/ficheros/texto.bin";
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         try {
-            /*crear un archivo binario para la escritura*/
-            FileOutputStream archSalida = new FileOutputStream(RUTA_ARCHIVO);
-            DataOutputStream datos = new DataOutputStream(archSalida);
+            // Abrir archivo binario para escritura
+            FileOutputStream fileOutputStream = new FileOutputStream(RUTA_ARCHIVO);
+            DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
             
-            /*Escritura del archivo y lectura linea a linea*/
-            BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+            // Escribir texto línea por línea en el archivo
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String linea;
             do {
-                linea = lector.readLine();
+                linea = reader.readLine();
                 if (!linea.isEmpty()) {
-                	datos.writeUTF(linea);
+                    dataOutputStream.writeUTF(linea);
                 }
             } while (!linea.isEmpty());
             
-            /* cerrar archivo*/
-            datos.close();
-            archSalida.close();
+            // Cerrar archivo de salida
+            dataOutputStream.close();
+            fileOutputStream.close();
             
-            /* lectura del archivo .bin y muestra del mismo en pantalla*/
-            FileInputStream archEntrada = new FileInputStream(RUTA_ARCHIVO);
-            DataInputStream datos2 = new DataInputStream(archEntrada);
-            while (datos2.available() > 0) {
-                String lineaLeida = datos2.readUTF();
+            // Leer archivo binario y mostrar contenido por pantalla
+            FileInputStream fileInputStream = new FileInputStream(RUTA_ARCHIVO);
+            DataInputStream dataInputStream = new DataInputStream(fileInputStream);
+            while (dataInputStream.available() > 0) {
+                String lineaLeida = dataInputStream.readUTF();
                 System.out.println(lineaLeida);
             }
             
-            /* cerrar el archvio de lectura*/
-            archEntrada.close();
-            datos2.close();
+            // Cerrar archivo de entrada
+            dataInputStream.close();
+            fileInputStream.close();
             
         } catch (IOException e) {
             e.printStackTrace();
