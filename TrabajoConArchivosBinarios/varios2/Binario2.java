@@ -2,6 +2,13 @@ package varios2;
 
 import java.io.*;
 
+/**
+ * @author Antonio Jesús Caro Gutiérrez
+ * @author Adrián Díaz López
+ * @author José Palomino Ochoa
+ * @author Daniel Romero Reyes
+ *
+ */
 public class Binario2 {
 
     public static void main(String[] args) {
